@@ -4,7 +4,7 @@ A walk-through for generating JSON schemas from TypeScript interfaces.
 
 ## Background
 
-I previously gave a talk at the [Detroit React meetup](https://www.meetup.com/use-detroit-react-devs/events/287721469/) about how [Signal Advisors](https://www.signaladvisors.com/careers-engineering-product) uses React to create a library of email templates. One of the questions after the talk was about how we populate data into those templates.
+I previously gave a talk at the [Detroit React meetup](https://www.meetup.com/use-detroit-react-devs/events/287721469/) about how [Signal Advisors](https://www.signaladvisors.com/careers-engineering-product) uses React to create a library of email templates. One of the questions after the talk was about how we populate data into those templates. This repository demonstrates the technique we use to confidently send thousands of emails to customers with confidence.
 
 ### Template Syntax
 
@@ -140,3 +140,33 @@ We need a way to share the schema we defined so it can be used at runtime.
 This JSON schema represents the `TemplatePayload` mentioned earlier. The more complex your data model gets, the more unwieldy this schema will get. It quickly becomes too cumbersome to manage by hand.
 
 That is where a tool such as [typescript-json-schema](https://github.com/YousefED/typescript-json-schema) comes in. With this, we are able to generate this JSON schema right from our interface with required properties, extends, annotation keywords, and property initializers as defaults translated into our schema.
+
+```ts
+const program = TJS.getProgramFromFiles(['src/schemas/example.schema.ts']);
+const schema = TJS.generateSchema(program);
+
+console.log(schema);
+/**
+ {
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "definitions": {
+    "Example1Payload": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "hometown": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "hometown",
+        "name"
+      ]
+    }
+  }
+}
+ * /
+```
