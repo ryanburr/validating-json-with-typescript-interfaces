@@ -1,4 +1,3 @@
-import fs from 'fs';
 import path from 'path';
 import * as TJS from 'typescript-json-schema';
 import dotenv from 'dotenv';
