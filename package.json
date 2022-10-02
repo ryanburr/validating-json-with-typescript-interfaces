@@ -8,7 +8,8 @@
   },
   "scripts": {
     "example1": "ts-node src/commands/example1.ts",
-    "example2": "ts-node src/commands/example2.ts"
+    "example2": "ts-node src/commands/example2.ts",
+    "example3": "ts-node src/commands/example3.ts"
   },
   "repository": {
     "type": "git",
