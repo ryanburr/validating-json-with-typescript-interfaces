@@ -12,7 +12,7 @@ async function main() {
       throw new Error('Required directories not defined.');
     }
   
-    const interfacePath = path.join(process.env.SOURCE_DIR, 'example1.interface.ts');
+    const interfacePath = path.join(process.env.SOURCE_DIR, 'example2.interface.ts');
   
     console.log(`Reading interface from ${interfacePath}`);
   
@@ -26,15 +26,15 @@ async function main() {
       ref: false
     });
   
-    const baseName = 'Example1Payload';
+    const baseName = 'Example2Payload';
     const definition = schema?.definitions?.[baseName];
     if (!definition) {
       throw new Error(`No definition found for ${baseName}`);
     }
-  
+    
     const jsonSchema = JSON.stringify(definition, null, '  ');
     
-    const buildPath = path.join(process.env.OUT_DIR, 'example1.schema.json');
+    const buildPath = path.join(process.env.OUT_DIR, 'example2.schema.json');
     await writeFile(buildPath, jsonSchema);
     
     console.log(`Schema generated at ${buildPath}`);
