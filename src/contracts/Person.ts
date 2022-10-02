@@ -10,6 +10,11 @@ export interface Person {
    */
   hometown: string;
   /**
+   * The person's email address
+   * @format email
+   */
+  email?: string;
+  /**
    * Where the person is employed
    */
   employer?: Employer;
