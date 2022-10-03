@@ -54,7 +54,7 @@ interface Employer {
 interface Person {
   name: string;
   hometown: string;
-  employer?: Employer
+  employer?: Pick<Employer, 'name'>;
 }
 
 interface TemplatePayload {
@@ -64,7 +64,7 @@ interface TemplatePayload {
 const template = Handlebars.compile(`
   <p>Hi, my name is {{person.name}} and I'm from {{person.hometown}}.</p>
   {{#if person.employer }}
-    <p>I work for {{person.employer.name}} who is headquartered in {{person.employer.location}}.</p>
+    <p>I work for {{person.employer.name}}.</p>
   {{/if}}
 `);
 
