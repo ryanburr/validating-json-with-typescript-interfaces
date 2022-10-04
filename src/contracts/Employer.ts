@@ -7,8 +7,4 @@ export interface Employer {
    * The place the employer is headquartered
    */
   location: string;
-  /**
-   * Your role in the company
-   */
-  title: 'Software Engineer' | 'Product Manager' | 'Designer';
 }
