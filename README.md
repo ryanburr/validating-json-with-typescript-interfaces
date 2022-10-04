@@ -170,3 +170,42 @@ console.log(schema);
 }
  * /
 ```
+
+## Examples
+
+### Example 1 - Basic
+
+- Add `name` and `hometown` props to payload interface
+- Compile and show output
+- Validate test payloads
+
+### Example 2 - Nested Structure
+
+- Create `Person` interface
+- Add property descriptions
+- Compile and show output
+- Validate test payloads
+- Create `Name` interface and extend `Person`
+- Compile and show output
+- Validate test payloads
+
+### Example 3 - Utility Types & Enums
+
+- Create `Employer` interface extending `Name`
+- Add optional `employer` prop with `Pick` utility type
+- Compile and show output
+- Validate test payloads
+- Add `title` prop to `Employer` as an enum
+- Compile and show output
+- Validate and show output
+- Switch `title` to use `keyof typeof Enum` (type literals)
+- Compile and show output
+- Validate test payloads
+
+### Example 4 - Property Validation
+
+- Add `email` prop to `Person` with `@format email` validation
+- Add `minLength` and `maxLength` validation to `name` and `location` on Employer
+- Add `start_date` prop to `Employer` with `@format date` validation
+- Compile `example4` and show output
+- Validate test payloads
