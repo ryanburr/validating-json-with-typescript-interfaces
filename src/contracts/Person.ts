@@ -1,5 +1,3 @@
-import { Employer } from "./Employer";
-
 export interface Person {
   /**
    * The person's first and last name
