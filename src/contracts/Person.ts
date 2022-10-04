@@ -9,8 +9,4 @@ export interface Person {
    * Where the person is from
    */
   hometown: string;
-  /**
-   * Where the person is employed
-   */
-  employer?: Employer;
 }
