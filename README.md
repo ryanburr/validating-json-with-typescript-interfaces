@@ -2,6 +2,8 @@
 
 A walk-through for generating JSON schemas from TypeScript interfaces.
 
+Here are some [slides](https://docs.google.com/presentation/d/19uB9cetu4snmlM8M-kkUX_c1pdvV4jmGTNys09B72iQ) that correspond to this repository.
+
 ## Background
 
 I previously gave a talk at the [Detroit React meetup](https://www.meetup.com/use-detroit-react-devs/events/287721469/) about how [Signal Advisors](https://www.signaladvisors.com/careers-engineering-product) uses React to create a library of email templates. One of the questions after the talk was about how we populate data into those templates. This repository demonstrates the technique we use to confidently send thousands of emails to customers with confidence.
